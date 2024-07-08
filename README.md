@@ -1,16 +1,43 @@
-# IMM_2010-2020
-Índice de margianción a nivel municipal 2010 - 2020 (Bookdown)   
-Bookdown: https://dvillasanao.github.io/IMM_2010-2020/   
+[![R-CMD-check](https://github.com/r-lib/usethis/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/r-lib/usethis/actions/workflows/R-CMD-check.yaml)
 
-## Resumen  
+# Índice de Marginación a nivel municipal en México   
 
-![image](https://github.com/dvillasanao/IMM_2010-2020/assets/38300596/148a13f0-0933-4e14-b091-4b7d18dec2ce)
+## Introducción   
 
-## Mapa a nivel municipal  
-![image](https://github.com/dvillasanao/IMM_2010-2020/assets/38300596/8f85a53b-53a7-442a-86fa-09e9b7ffd99a)
+El Índice de Marginación es una herramienta que evalúa las condiciones de carencia en México, como acceso a educación, vivienda adecuada, ingresos monetarios y tamaño de la localidad. Se utiliza para identificar y focalizar políticas públicas dirigidas a reducir estas carencias.  
 
-# Comparativo en el tiempo   
+## Metodología de Estimación  
 
-![image](https://github.com/dvillasanao/IMM_2010-2020/assets/38300596/7611bf48-f5af-4d93-b7ef-f7c147aa2024)
+El Índice de Marginación a nivel municipal se basa en datos del Censo de Población y Vivienda 2020, Censo de Población y Vivienda 2010 y la Encuesta Intercensal 2015, utilizando nueve indicadores socioeconómicos. Se emplea el Método de Distancia `DP2` para comparaciones temporales y espaciales, asegurando robustez estadística y comparabilidad a lo largo del tiempo y entre regiones.    
 
+## Beneficios del Método DP2   
 
+El Método DP2 permite comparaciones precisas entre diferentes niveles geográficos, utilizando un indicador sintético que mide la distancia a una base de referencia teórica. Esto facilita la identificación de áreas más marginadas y el diseño de políticas efectivas.  
+
+## Contenido    
+
+Este proyecto contiene los siguientes archivos y directorios principales:   
+
+-   **\_bookdown.yml**: Archivo de configuración de `bookdown`.\
+-   **index.Rmd**: El archivo principal del libro.\
+-   **01-Indicadores.Rmd**, **02-Datos.Rmd**, etc.: Archivos de contenido del libro, uno por capítulo.\
+-   **\_output.yml**: Archivo de configuración de salida.\
+-   **docs/**: Directorio donde se generarán los archivos HTML del libro.\
+-   **README.md**: Este archivo.
+
+## Requisitos  
+
+Para compilar este libro necesitas tener instalados los siguientes programas y paquetes:    
+
+-   R: [Descargar R](https://cran.r-project.org/)  
+-   RStudio (opcional pero recomendado): [Descargar RStudio](https://www.rstudio.com/products/rstudio/download/)   
+-   Paquete `bookdown`: Puedes instalarlo desde CRAN ejecutando `install.packages("bookdown")`  
+-   **Nota**: la paquetería `r paste("p2distance (>= ", packageVersion('p2distance'), ")", sep = "")`, no se encuentra actualizada dentro del `CRAN` pero se encuentra dentro de sus repositorios.   
+
+```{{r}}
+ install.packages("https://cran.r-project.org/src/contrib/Archive/p2distance/p2distance_1.0.1.tar.gz")   
+```
+
+### Bookdown  
+
+**Enlace**: <https://dvillasanao.github.io/IMM_2010-2020/>  
