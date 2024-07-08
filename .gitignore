@@ -40,10 +40,17 @@ vignettes/*.pdf
 .Renviron
 
 # pkgdown site
-docs/
 
 # translation temp files
 po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+
+img/map_*
+img/leaflet_*
+Output/
+Graficos/
+_bookdown_files/
+Bases/*.xlsx
