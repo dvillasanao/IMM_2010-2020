@@ -51,6 +51,7 @@ rsconnect/
 img/map_*
 img/leaflet_*
 Output/
+Output/*.RData
 Graficos/
 _bookdown_files/
 Bases/*.xlsx
