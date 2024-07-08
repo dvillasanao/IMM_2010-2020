@@ -47,10 +47,9 @@ windowsFonts()
 #Century Gothic
 ```
 
-
-
 ```{r, echo = FALSE, results=FALSE}
 # Librerías que se usaron en el documento
+require(Cairo)
 require(ggplot2)
 require(ggridges)
 require(grDevices)
@@ -111,11 +110,11 @@ tabla <- p %>%
 tabla %>% 
  gt() %>%
   tab_header(title = "Nacional: Población y unidades geograficas según el índice de marginación, 2010-2020") %>%
-   tab_options(heading.title.font.size = 12, 
-               heading.subtitle.font.size = 10,
+   tab_options(heading.title.font.size = 14, 
+               heading.subtitle.font.size = 12,
                table.font.names = 'Century Gothic',
                table.align = "center",
-               table.font.size = 8,
+               table.font.size = 10,
                data_row.padding = px(1)) %>%
      tab_style(style = list(cell_text(align = "left",
                                       weight = 'bold')),

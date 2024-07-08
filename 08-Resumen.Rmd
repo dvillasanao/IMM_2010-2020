@@ -1,4 +1,6 @@
-# Resumen  {.unlisted .unnumbered}
+# Resumen  {.unlisted .unnumbered}  
+
+El índice de marginación permite clasificar a los municipios según el impacto global de las carencias que sufre la población debido a la falta de acceso a la educación, la residencia en viviendas inadecuadas, los bajos ingresos monetarios y la falta de servicios de salud, equipamientos e infraestructura adecuada en las localidades. Estas condiciones crean una estructura precaria de oportunidades que obstruye el pleno desarrollo del potencial humano.   
 
 ```{r, echo = FALSE}
 for(i in tablas){
@@ -22,11 +24,11 @@ tabla <- p %>%
 tabla %>% 
  gt() %>%
   tab_header(title = "Nacional: Población y unidades geograficas según el índice de marginación, 2010-2020") %>%
-   tab_options(heading.title.font.size = 12, 
-               heading.subtitle.font.size = 10,
-               table.font.names = 'montserrat',
+   tab_options(heading.title.font.size = 14, 
+               heading.subtitle.font.size = 12,
+               table.font.names = 'Century Gothic',
                table.align = "center",
-               table.font.size = 8,
+               table.font.size = 10,
                data_row.padding = px(1)) %>%
      tab_style(style = list(cell_text(align = "left",
                                       weight = 'bold')),
@@ -42,7 +44,7 @@ tabla %>%
                  `2015.GM` = md("**Municipios**"),
                  `2020.GM` = md("**Municipios**"),
                  "2010.get(nombres[17])" = md("**Grados**")) %>%
-       fmt_integer(columns = c(2,4,6), sep_mark = " ") %>%
+       fmt_integer(columns = c(2, 4, 6), sep_mark = " ") %>%
         tab_spanner(label = "2010",
                     columns = c(2:3)) %>%
         tab_spanner(label = "2015",
@@ -52,7 +54,20 @@ tabla %>%
          as_raw_html() 
 ```
 
+La tabla anterior, presenta una comparación temporal del grado de marginación a nivel municipal en México, desagregada por el grado de marginación para los años 2010, 2015 y 2020.  
 
+**Observaciones Clave**    
+
+**1.- Incremento en la Población de Grado Alto y Muy Alto:**\
+Hay un aumento constante en la población en grados de marginación Alto y Muy Alto de 2010 a 2020. En 2010, el 8.9% de la población residía en municipios con grados de marginación alto y muy alto. Para 2015, esta proporción aumentó al 9.5%, y en 2020 fue del 9.1%.    
+
+**2.- Disminución en Grados Bajo y Muy Bajo:**\
+La población en grados de marginación Bajo y Muy Bajo muestra una tendencia a la baja. En 2010, el 81.3% de la población residía en municipios con grados de marginación bajo y muy bajo. Para 2015, esta proporción disminuyó al 80.4%, y en 2020 aumentó ligeramente al 83.5%.  
+
+**3.- Estabilidad en Grado Medio:**\
+La población en el grado de marginación Medio muestra una ligera fluctuación. En 2010, el 9.9% de la población residía en municipios con este grado de marginación. En 2015, esta proporción fue del 10.2%, y en 2020 disminuyó al 7.4%.   
+
+En resumen, la mayoría de la población reside en municipios con grados de marginación Bajo y Muy Bajo, que representan más del 80% de la población en todos los años considerados. La población en grados de marginación Medio ha mostrado una ligera fluctuación, mientras que la población en grados de marginación Muy Alto y Alto ha tenido un pequeño incremento hasta 2015, seguido de una leve disminución en 2020.   
 
 ## Mapa a nivel municipal {-}
 

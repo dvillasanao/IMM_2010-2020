@@ -43,14 +43,19 @@ El orden de entrada de las variables
 ```{r}
 # Se multiplica por -1, debido a que son indicadores de carencia 
 for(i in tablas){	
-  assign(paste0("DP2_datos_",i), (-1 * get(paste0("tabla_", i))[7:15]))
+  assign(paste0("DP2_datos_", i), (-1 * get(paste0("tabla_", i))[7:15]))
 }
 ```
 
 
+Para asegurar las propiedades del indicador sintético, un aumento en los indicadores simples implica un aumento en la carencia de los servicios, lo que implicaría una disminución de la calidad de vida, por lo que se multiplica cada indicador por **-1**, de esta forma, un aumento en la variable supone una mejora en la calidad de vida.    
+
+
 ## Base de referencia  {-}
 
-  Se toma como base de referencia el valor del mínimo del `2010 - 2020`, ya que este tipo de cambio permite la comparabilidad en el tiempo. 
+Se define al valor de referencia para cada uno de los indicadores parciales, con la finalidad de hacer comparaciones entre las diferentes unidades espaciales (Municipios). Siendo este el valor mínimo de cada indicador simple como referencia, representado como la “situación no deseada”. Como resultado, un valor alto implicaría una distancia alejada con respecto a una situación teórica “situación no deseada”. Por lo tanto $d_{ij}$ mide la distancia entre el indicador parcial $j$ en la entidad $i$ y su valor de referencia.   
+
+Se toma como base de referencia el valor del mínimo del `2010 - 2020`, ya que este tipo de cambio permite la comparabilidad en el tiempo.    
 
 
 ```{r}
@@ -84,16 +89,16 @@ minRV %>%
     tab_header(title = "Base de referencia") %>%
      fmt_number(columns = names(tabla_2020)[7:15], 
                 decimals = 2) %>%
-      tab_options(heading.title.font.size = 12, 
+      tab_options(heading.title.font.size = 14, 
                   heading.align = "center",
-                  heading.subtitle.font.size = 10,
+                  heading.subtitle.font.size = 12,
                   table.align = "center",
-                  table.font.names = 'montserrat',
-                  table.font.size = 8) %>%
+                  table.font.names = 'Century Gothic',
+                  table.font.size = 10) %>%
        tab_style(style = list(cell_text(align = "center",
                                          weight = 'bold')),
                   locations = list(cells_title(groups = c("title")))) %>%
-        tab_style(style = list(cell_text(align = "left")),
+        tab_style(style = list(cell_text(align = "center")),
                    locations = list(cells_title(groups = c("subtitle")))) %>%
          cols_label(AÑO = md("**AÑO**"), 
                     ANALF = md("**ANALF**"),
@@ -112,13 +117,20 @@ minRV %>%
 
 ## Método de Distancia $DP_{2}$  {-}   
 
+Utilizando paquetería `p2distance`,  se crean objetos con nombres dinámicos (`ind_i`) donde **i** es cada elemento de los años de observación.   
+
+- `p2distance`: Función que calcula las distancias DP2.    
+- `matriz`: Datos de entrada, convertidos a matriz.   
+- `reference_vector`: Vector de referencia para el cálculo de distancias.   
+- `iterations`: Número de iteraciones para el cálculo.   
+
 ```{r, results=FALSE}
 require(p2distance)
 ##Calculo del Método de Distancias DP2
 for(i in tablas){
-assign(paste0("ind_",i), p2distance(matriz = as.matrix(get(paste0("DP2_datos_", i))), 
-                                     reference_vector = get(paste0("minRV_", i)), 
-                                      iterations = 50))
+assign(paste0("ind_", i), p2distance(matriz = as.matrix(get(paste0("DP2_datos_", i))), 
+                                      reference_vector = get(paste0("minRV_", i)), 
+                                       iterations = 50))
 }
 ```
 
@@ -143,11 +155,11 @@ tabla %>%
   gt() %>%
    tab_header(title = "Número de iteraciones") %>%
     fmt_integer(columns = "V1") %>%
-     tab_options(heading.title.font.size = 12, 
-                 heading.subtitle.font.size = 10,
-                 table.font.names = 'montserrat',
+     tab_options(heading.title.font.size = 14, 
+                 heading.subtitle.font.size = 12,
+                 table.font.names = 'Century Gothic',
                  table.align = "center",
-                 table.font.size = 8,
+                 table.font.size = 10,
                  data_row.padding = px(1)) %>%
       tab_style(style = list(cell_text(align = "left",
                                         weight = 'bold')),

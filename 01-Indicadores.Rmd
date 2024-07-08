@@ -1,5 +1,8 @@
 # Indicadores simples  {.unlisted .unnumbered}
 
+El índice de marginación considera cuatro dimensiones estructurales, identifica nueve formas de exclusión y mide su intensidad espacial como porcentaje de la población que no participa del disfrute de bienes y servicios esenciales para el desarrollo de sus capacidades básicas. A continuación pueden verse las nueve formas de exclusión social de origen estructural que capta el índice de marginación, así como los indicadores utilizados.    
+
+
 ### Porcentaje de población analfabeta de 15 años o más $(I_{1}^{i})$ {-}
 	
 El indicador se obtiene dividiendo el monto de población de 15 años o más que declaró no saber leer y escribir un recado, entre la diferencia de la población total de 15 años o más y aquellos que no especificaron su condición de alfabetismo:  
@@ -142,8 +145,8 @@ Indicadores <- c(
                  'Porcentaje de ocupantes en viviendas sin agua entubada', 
                  'Porcentaje de viviendas con algún nivel de hacinamiento',
                  'Porcentaje de ocupantes en viviendas con piso de tierra',
-                 'Porcentaje de población en localidades con menos de \n 5 000 habitantes', 
-                 'Porcentaje de población ocupada con ingresos de hasta \n 2 salarios mínimos'
+                 'Porcentaje de población en localidades con menos de 5 000 habitantes', 
+                 'Porcentaje de población ocupada con ingresos de hasta 2 salarios mínimos'
                  )
 ```
 	

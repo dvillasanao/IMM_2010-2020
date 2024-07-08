@@ -1,13 +1,21 @@
 # Base de datos {.unlisted .unnumbered}
 
-Se definen los años que se van a analizar a los índice de marginación 
+Se define un vector llamado `tablas` que contiene los años `2010`, `2015` y `2020` como cadenas de texto. Este vector se utilizará para iterar y cargar las bases de datos correspondientes a esos años. 
+
+**Definición de tablas**   
 
 ```{r}
 tablas <- c("2010", "2015", "2020")
 ```
 
-**Se carga la base de datos**  
+**Se carga la base de datos para los 3 años**  
 
+ Dentro del iterador `for()`, para cada año se construye el nombre del archivo de datos:    
+
+- Obtención de la tabla: `get(paste0("tabla_",i))` obtiene la tabla cargada previamente (donde el nombre de cada tabla cargada es `tabla_2010`, `tabla_2015`, etc.).    
+- Renombrando de la columna: `rename("ANIO" = "AÑO")` cambia el nombre de la columna AÑO a `ANIO`.   
+- Filtrado de datos: `filter(NOM_ENT != "Nacional")` elimina las filas donde la columna `NOM_ENT` tiene el valor "Nacional".    
+- Conversión de la columna a factor: `dplyr::mutate(ANIO = as.factor(.$ANIO))` convierte la columna `ANIO` en un factor.  
 
 ```{r}
 for(i in tablas){
@@ -24,7 +32,7 @@ assign(paste0("tabla_", i), get(paste0("tabla_", i)) %>%
 }
 ```
 
-<div style="height:300px;overflow:auto;">
+<div style="height:700px;overflow:auto;">
 ```{r, echo = FALSE}
 require(gt)
 tabla_2020 %>% 
@@ -37,10 +45,10 @@ tabla_2020 %>%
                   decimals = 2) %>%
        fmt_integer(columns = "POB_TOT", 
                     sep_mark = " ") %>%
-        tab_options(heading.title.font.size = 12, 
-                    heading.subtitle.font.size = 10,
-                    table.font.names = 'montserrat',
-                    table.font.size = 8,
+        tab_options(heading.title.font.size = 14, 
+                    heading.subtitle.font.size = 12,
+                    table.font.names = 'Century Gothic',
+                    table.font.size = 10,
                     data_row.padding = px(1)) %>%
          tab_style(style = list(cell_text(align = "left",
                                            weight = 'bold')),

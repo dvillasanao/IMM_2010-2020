@@ -41,10 +41,7 @@ $(function () {
     var options = {
       keys: ["heading", "text", "code"],
       ignoreLocation: true,
-<<<<<<< HEAD
       ignoreFieldNorm: true,
-=======
->>>>>>> 2b0c413198f56a1e4c653a89e2c7bb6f1676b969
       threshold: 0.1,
       includeMatches: true,
       includeScore: true,
