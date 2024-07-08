@@ -81,6 +81,8 @@ p
 ## Comparación en el tiempo {-}
 
 
+<a href="/img/Mapas_2010_2020.png" data-lightbox="image-1" data-title="Mapas">
 ```{r, echo=FALSE, out.width='100%'}
-readRDS(paste0(here::here(),"/Output/Mapas_2010-2020.rds"))
+knitr::include_graphics(paste0(here::here(), "/img/Mapas_2010_2020.png"))
 ```
+</a>
