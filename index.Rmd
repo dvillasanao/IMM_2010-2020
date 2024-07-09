@@ -40,7 +40,7 @@ A lo largo de las décadas, el índice ha evolucionado significativamente en té
 
 Este índice sigue siendo una herramienta crucial para identificar las mejores prácticas y generar estrategias de intervención focalizadas en las áreas que más lo necesitan, con el fin de mejorar las condiciones de vida de la población mexicana.  
 
-<a href="/img/Mapas_2010_2020.png" data-lightbox="image-1" data-title="Mapas">
+<a href="https://raw.githubusercontent.com/dvillasanao/IMM_2010-2020/main/img/Mapas_2010_2020.png" data-lightbox="image-1" data-title="Mapas">
 ```{r, echo=FALSE, out.width='100%'}
 knitr::include_graphics(paste0(here::here(), "/img/Mapas_2010_2020.png"))
 ```
