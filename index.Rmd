@@ -75,6 +75,7 @@ windowsFonts()
 #Century Gothic
 ```
 
+
 ```{r, echo = FALSE, results=FALSE}
 # Librerías que se usaron en el documento
 require(Cairo)
