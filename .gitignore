@@ -48,7 +48,7 @@ po/*~
 rsconnect/
 
 
-img/map_*
+
 img/leaflet_*
 Output/
 Output/*.RData
