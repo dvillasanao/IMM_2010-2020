@@ -59,6 +59,5 @@ Por favor, revisa el [Código de Conducta](CODE_OF_CONDUCT.md) antes de contribu
 
 ## Licencia
 
-Este documento está licenciado bajo la licencia Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). Esto significa que puedes copiar, distribuir y modificar el trabajo, siempre y cuando atribuyas la obra original y la compartas bajo los mismos términos.
-
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" alt="Creative Commons Licence" style="border-width:0"/></a><br />This work by [**Diana Villasana Ocampo**]{xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName"} is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
